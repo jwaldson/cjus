@@ -29,6 +29,11 @@ public class DocumentoIdentificacao implements Serializable {
 		this.nomeDetentora = nomeDetentora;
 	}
 
+	public DocumentoIdentificacao(Integer fkPessoa) {
+		super();
+		this.fkPessoa = fkPessoa;
+	}
+
 	public DocumentoIdentificacao() {
 		super();
 		// TODO Auto-generated constructor stub

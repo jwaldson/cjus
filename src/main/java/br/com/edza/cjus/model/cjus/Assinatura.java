@@ -14,6 +14,31 @@ import javax.persistence.Table;
 @Table(name = "cnj_assinatura")
 public class Assinatura implements Serializable {
 
+	public Assinatura() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Assinatura(Integer id, Integer fkDocumento, String assinatura, String algoritmo_hash_assinatura,
+			String cadeia_certificado_assinatura, String codificacao_certificado_assinatura, String data_assinatura,
+			String signatatio_login_identficador) {
+		super();
+		this.id = id;
+		this.fkDocumento = fkDocumento;
+		this.assinatura = assinatura;
+		this.algoritmo_hash_assinatura = algoritmo_hash_assinatura;
+		this.cadeia_certificado_assinatura = cadeia_certificado_assinatura;
+		this.codificacao_certificado_assinatura = codificacao_certificado_assinatura;
+		this.data_assinatura = data_assinatura;
+		this.signatatio_login_identficador = signatatio_login_identficador;
+	}
+
+	public Assinatura(Integer fkDocumento) {
+		super();
+		this.fkDocumento = fkDocumento;
+	}
+
+	
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

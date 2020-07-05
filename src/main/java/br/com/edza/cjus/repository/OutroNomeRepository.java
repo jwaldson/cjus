@@ -13,7 +13,7 @@ import br.com.edza.cjus.model.cjus.OutroNome;
 public interface OutroNomeRepository extends JpaRepository<OutroNome, Integer>{
 	
 	@Query("SELECT new  br.com.edza.cjus.model.cjus.OutroNome(\n" +
-			"id, fkPessoa, outroNome" +
+			"id, fkPessoa, outroNome) " +
 			"FROM OutroNome c WHERE c.fkPessoa = :fkPessoa")
 	List<OutroNome> consultaOutroNome(@Param("fkPessoa") Integer fkPessoa);
 

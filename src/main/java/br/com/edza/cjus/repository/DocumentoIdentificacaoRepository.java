@@ -14,7 +14,7 @@ public interface DocumentoIdentificacaoRepository extends JpaRepository<Document
 	
 	@Query("SELECT new  br.com.edza.cjus.model.cjus.DocumentoIdentificacao(\n" +
 			"id, fkPessoa, codigoDocumento, emissorDocumento,\n" + 
-			"tipoDocumento, nomeDetentora " +
+			"tipoDocumento, nomeDetentora) " +
 			"FROM DocumentoIdentificacao c WHERE c.fkPessoa = :fkPessoa")
 	List<DocumentoIdentificacao> consultaDocumentoIdentificacao(@Param("fkPessoa") Integer fkPessoa);
 

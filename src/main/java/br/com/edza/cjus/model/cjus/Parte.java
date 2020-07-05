@@ -21,16 +21,24 @@ public class Parte implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public Parte(Integer id, Integer fkPolo, String assistencia_judiciaria, String intimacaoPendente,
-			List<Pessoa> pessoas, List<Advogado> advogados) {
+	public Parte() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Parte(Integer id, Integer fkPolo, String assistencia_judiciaria, String intimacaoPendente) {
 		super();
 		this.id = id;
 		this.fkPolo = fkPolo;
 		this.assistencia_judiciaria = assistencia_judiciaria;
 		this.intimacaoPendente = intimacaoPendente;
-		this.pessoas = pessoas;
-		this.advogados = advogados;
 	}
+
+	public Parte(Integer fkPolo) {
+		super();
+		this.fkPolo = fkPolo;
+	}
+	
 	
 	@Id
 	@Column(name = "id")

@@ -30,9 +30,7 @@ public class DadoBasico implements Serializable {
 
 	public DadoBasico(Integer id, Integer fkManifestacaoProcessual, BigInteger classeProcessual,
 			BigInteger codigoLocalidade, BigInteger competencia, String modalidadeVinculacaoProcesso,
-			BigInteger valorCausa, BigInteger nivelSigilo, String dataAjuizamento, String outroParametro,
-			List<AssuntoProcessual> assuntos, List<ProcessoVinculado> prcessosVinculados, List<Prioridade> prioridades,
-			List<Polo> polo) {
+			BigInteger valorCausa, BigInteger nivelSigilo, String dataAjuizamento, String outroParametro) {
 		super();
 		this.id = id;
 		this.fkManifestacaoProcessual = fkManifestacaoProcessual;
@@ -48,6 +46,11 @@ public class DadoBasico implements Serializable {
 		this.prcessosVinculados = prcessosVinculados;
 		this.prioridades = prioridades;
 		this.polo = polo;
+	}
+
+	public DadoBasico(Integer fkManifestacaoProcessual) {
+		super();
+		this.fkManifestacaoProcessual = fkManifestacaoProcessual;
 	}
 
 

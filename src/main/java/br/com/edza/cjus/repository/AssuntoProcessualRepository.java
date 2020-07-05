@@ -15,7 +15,7 @@ public interface AssuntoProcessualRepository extends JpaRepository<DadoBasico, I
 	
 	@Query("SELECT new  br.com.edza.cjus.model.cjus.AssuntoProcessual(\n" +
 			"id, fkDadosBasicos, principal, codigoNacional,\n" + 
-			"codigoAssunto, codigoPaiNacional, descricao" +
+			"codigoAssunto, codigoPaiNacional, descricao) " +
 			"FROM AssuntoProcessual c WHERE c.fkDadosBasicos = :fkDadosBasicos")
 	List<DadoBasico> consultaRegistrosProcessar(@Param("fkDadosBasicos") Integer fkDadosBasicos);
 }

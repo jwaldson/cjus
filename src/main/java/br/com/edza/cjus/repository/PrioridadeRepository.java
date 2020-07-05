@@ -13,7 +13,7 @@ import br.com.edza.cjus.model.cjus.Prioridade;
 public interface PrioridadeRepository extends JpaRepository<Prioridade, Integer>{
 	
 	@Query("SELECT new  br.com.edza.cjus.model.cjus.Prioridade(\n" +
-			"id, fkDadosBasicos, prioridade, vinculo " +
-			"FROM ProcessoVinculado c WHERE c.fkDadosBasicos = :fkDadosBasicos")
-	List<Prioridade> consultaRegistrosProcessar(@Param("fkDadosBasicos") Integer fkProcessoVinculado);
+			"id, fkDadosBasicos, prioridade, vinculo) " +
+			"FROM Prioridade c WHERE c.fkDadosBasicos = :fkDadosBasicos")
+	List<Prioridade> consultaRegistrosProcessar(@Param("fkDadosBasicos") Integer fkDadosBasicos);
 }

@@ -13,9 +13,9 @@ import br.com.edza.cjus.model.cjus.ProcessoVinculado;
 public interface ProcessoVinculadoRepository extends JpaRepository<ProcessoVinculado, Integer>{
 	
 	@Query("SELECT new  br.com.edza.cjus.model.cjus.ProcessoVinculado(\n" +
-			"fkDadosBasicos,\n" + 
+			"id, fkDadosBasicos,\n" + 
 			"numeroProcesso,\n" + 
-			"vinculo " +
+			"vinculo) " +
 			"FROM ProcessoVinculado c WHERE c.fkDadosBasicos = :fkDadosBasicos")
-	List<ProcessoVinculado> consultaRegistrosProcessar(@Param("fkDadosBasicos") Integer fkProcessoVinculado);
+	List<ProcessoVinculado> consultaRegistrosProcessar(@Param("fkDadosBasicos") Integer fkDadosBasicos);
 }

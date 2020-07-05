@@ -31,6 +31,12 @@ public class Prioridade implements Serializable {
 		this.vinculo = vinculo;
 	}
 
+	public Prioridade(Integer fkDadosBasicos) {
+		super();
+		this.fkDadosBasicos = fkDadosBasicos;
+	}
+	
+	
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

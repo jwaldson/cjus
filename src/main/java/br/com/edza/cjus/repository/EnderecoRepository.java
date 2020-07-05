@@ -12,16 +12,17 @@ import br.com.edza.cjus.model.cjus.Endereco;
 @Repository
 public interface EnderecoRepository extends JpaRepository<Endereco, Integer>{
 	
-	@Query("SELECT new  br.com.edza.cjus.model.cjus.Endereco(\n" +
-			"id, fkPessoa, fkAdvogado, cep, logradouro, numero,\n" + 
-			"complemento, bairro, cidade, estado, pais " +
-			"FROM Endereco c WHERE c.fkAdvogado = :fkAdvogado")
+	@Query("SELECT n " +
+            "FROM Endereco as n " +
+            "WHERE " +
+         "      n.fkAdvogado = :fkAdvogado")	
 	List<Endereco> consultaEnderecoAdvogado(@Param("fkAdvogado") Integer fkAdvogado);
 
-	@Query("SELECT new  br.com.edza.cjus.model.cjus.Endereco(\n" +
-			"id, fkPessoa, fkAdvogado, cep, logradouro, numero,\n" + 
-			"complemento, bairro, cidade, estado, pais " +
-			"FROM Endereco c WHERE c.fkPessoa = :fkPessoa")
+	@Query("SELECT n " +
+            "FROM Endereco as n " +
+            "WHERE " +
+         "      n.fkPessoa = :fkPessoa")	
 	List<Endereco> consultaEnderecoPessoa(@Param("fkPessoa") Integer fkPessoa);
 
+	
 }

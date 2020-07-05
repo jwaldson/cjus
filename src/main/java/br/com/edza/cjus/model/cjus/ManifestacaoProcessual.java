@@ -28,8 +28,7 @@ public class ManifestacaoProcessual implements Serializable {
 	public ManifestacaoProcessual(Integer id, String entraStatusProcessamento, BigInteger idManifestante,
 			String senhaManifestante, Boolean retornoSucesso, String retornoMensagem,
 			BigInteger retornoProtocoloRecebimento, String retornoDataOperacao, String retornoRecibo,
-			String saiConteudoRetornado, String saiDataAtualizacaoRegistro, String saiErroSistema,
-			List<DadoBasico> dadoBasico, List<Documento> documentos) {
+			String saiConteudoRetornado, String saiDataAtualizacaoRegistro, String saiErroSistema) {
 		super();
 		this.id = id;
 		this.entraStatusProcessamento = entraStatusProcessamento;
@@ -43,8 +42,6 @@ public class ManifestacaoProcessual implements Serializable {
 		this.saiConteudoRetornado = saiConteudoRetornado;
 		this.saiDataAtualizacaoRegistro = saiDataAtualizacaoRegistro;
 		this.saiErroSistema = saiErroSistema;
-		this.dadoBasico = dadoBasico;
-		this.documentos = documentos;
 	}
 
 	@Id

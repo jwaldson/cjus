@@ -21,11 +21,14 @@ public class Pessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
+	public Pessoa() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Pessoa(Integer id, Integer fkParte, Integer fkAdvogado, String nome, String sexo, String nomeGenitor,
 			String nomeGenitora, String dataNascimento, String dataObito, BigInteger numeroDocumentoPrincipal,
-			String tipoPessoa, String cidadeNatural, String estadoNatural, String nacionalidade,
-			List<Endereco> enderecos, List<OutroNome> outrosNomes,
-			List<DocumentoIdentificacao> documentosIdentificacao) {
+			String tipoPessoa, String cidadeNatural, String estadoNatural, String nacionalidade) {
 		super();
 		this.id = id;
 		this.fkParte = fkParte;
@@ -41,11 +44,13 @@ public class Pessoa implements Serializable {
 		this.cidadeNatural = cidadeNatural;
 		this.estadoNatural = estadoNatural;
 		this.nacionalidade = nacionalidade;
-		this.enderecos = enderecos;
-		this.outrosNomes = outrosNomes;
-		this.documentosIdentificacao = documentosIdentificacao;
 	}
 
+	public Pessoa(Integer fkParte) {
+		super();
+		this.fkParte = fkParte;
+	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -99,6 +104,142 @@ public class Pessoa implements Serializable {
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL, mappedBy="fkPessoa")
 	private List<DocumentoIdentificacao> documentosIdentificacao;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getFkParte() {
+		return fkParte;
+	}
+
+	public void setFkParte(Integer fkParte) {
+		this.fkParte = fkParte;
+	}
+
+	public Integer getFkAdvogado() {
+		return fkAdvogado;
+	}
+
+	public void setFkAdvogado(Integer fkAdvogado) {
+		this.fkAdvogado = fkAdvogado;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+	public String getNomeGenitor() {
+		return nomeGenitor;
+	}
+
+	public void setNomeGenitor(String nomeGenitor) {
+		this.nomeGenitor = nomeGenitor;
+	}
+
+	public String getNomeGenitora() {
+		return nomeGenitora;
+	}
+
+	public void setNomeGenitora(String nomeGenitora) {
+		this.nomeGenitora = nomeGenitora;
+	}
+
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public String getDataObito() {
+		return dataObito;
+	}
+
+	public void setDataObito(String dataObito) {
+		this.dataObito = dataObito;
+	}
+
+	public BigInteger getNumeroDocumentoPrincipal() {
+		return numeroDocumentoPrincipal;
+	}
+
+	public void setNumeroDocumentoPrincipal(BigInteger numeroDocumentoPrincipal) {
+		this.numeroDocumentoPrincipal = numeroDocumentoPrincipal;
+	}
+
+	public String getTipoPessoa() {
+		return tipoPessoa;
+	}
+
+	public void setTipoPessoa(String tipoPessoa) {
+		this.tipoPessoa = tipoPessoa;
+	}
+
+	public String getCidadeNatural() {
+		return cidadeNatural;
+	}
+
+	public void setCidadeNatural(String cidadeNatural) {
+		this.cidadeNatural = cidadeNatural;
+	}
+
+	public String getEstadoNatural() {
+		return estadoNatural;
+	}
+
+	public void setEstadoNatural(String estadoNatural) {
+		this.estadoNatural = estadoNatural;
+	}
+
+	public String getNacionalidade() {
+		return nacionalidade;
+	}
+
+	public void setNacionalidade(String nacionalidade) {
+		this.nacionalidade = nacionalidade;
+	}
+
+	public List<Endereco> getEnderecos() {
+		return enderecos;
+	}
+
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
+	}
+
+	public List<OutroNome> getOutrosNomes() {
+		return outrosNomes;
+	}
+
+	public void setOutrosNomes(List<OutroNome> outrosNomes) {
+		this.outrosNomes = outrosNomes;
+	}
+
+	public List<DocumentoIdentificacao> getDocumentosIdentificacao() {
+		return documentosIdentificacao;
+	}
+
+	public void setDocumentosIdentificacao(List<DocumentoIdentificacao> documentosIdentificacao) {
+		this.documentosIdentificacao = documentosIdentificacao;
+	}
 	
 }
 

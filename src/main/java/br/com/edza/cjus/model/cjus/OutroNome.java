@@ -24,7 +24,12 @@ public class OutroNome implements Serializable {
 		this.fkPessoa = fkPessoa;
 		this.outroNome = outroNome;
 	}
+	public OutroNome(Integer fkPessoa) {
+		super();
+		this.fkPessoa = fkPessoa;
+	}
 
+	
 	public OutroNome() {
 		super();
 		// TODO Auto-generated constructor stub

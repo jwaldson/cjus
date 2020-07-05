@@ -35,6 +35,12 @@ public class AssuntoProcessual implements Serializable {
 		this.descricao = descricao;
 	}
 
+	public AssuntoProcessual(Integer fkDadosBasicos) {
+		super();
+		this.fkDadosBasicos = fkDadosBasicos;
+	}
+	
+	
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)	

@@ -30,6 +30,12 @@ public class ProcessoVinculado implements Serializable {
 		this.vinculo = vinculo;
 	}
 
+	public ProcessoVinculado(Integer fkDadosBasicos) {
+		super();
+		this.fkDadosBasicos = fkDadosBasicos;
+	}
+
+	
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)	
