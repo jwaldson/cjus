@@ -43,7 +43,7 @@ public class Advogado implements Serializable {
 
 	
 	@Id
-	@Column(name = "id")
+	@Column(name = "cnj_advogado_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 

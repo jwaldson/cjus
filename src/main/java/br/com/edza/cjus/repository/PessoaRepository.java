@@ -16,8 +16,8 @@ public interface PessoaRepository extends JpaRepository<Pessoa, Integer>{
 			"id, fkParte, fkAdvogado, nome, sexo, nomeGenitor,\n" + 
 			"nomeGenitora, dataNascimento, dataObito, numeroDocumentoPrincipal,\n" + 
 			"tipoPessoa, cidadeNatural, estadoNatural, nacionalidade)\n" + 
-			"FROM Pessoa c WHERE c.fkParte = :fkParte")
-	List<Pessoa> consultarPessoa(@Param("fkParte") Integer fkParte);
+			"FROM Pessoa c WHERE c.id = :id")
+	Pessoa consultarPessoa(@Param("id") Integer id);
 	
 	@Query("SELECT new  br.com.edza.cjus.model.cjus.Pessoa(\n" +
 			"id, fkParte, fkAdvogado, nome, sexo, nomeGenitor,\n" + 

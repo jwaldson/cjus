@@ -37,7 +37,7 @@ public class OutroNome implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "cnj_outro_nome_id")
 	private Integer id;
 	
 	@Column(name = "fk_id_pessoa")
@@ -45,6 +45,25 @@ public class OutroNome implements Serializable {
 
 	@Column(name = "outro_nome")
 	private String outroNome;
+
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public Integer getFkPessoa() {
+		return fkPessoa;
+	}
+	public void setFkPessoa(Integer fkPessoa) {
+		this.fkPessoa = fkPessoa;
+	}
+	public String getOutroNome() {
+		return outroNome;
+	}
+	public void setOutroNome(String outroNome) {
+		this.outroNome = outroNome;
+	}
 	
 }
 

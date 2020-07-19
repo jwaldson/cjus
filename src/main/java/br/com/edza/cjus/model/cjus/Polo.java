@@ -43,7 +43,7 @@ public class Polo implements Serializable {
 
 	
 	@Id
-	@Column(name = "id")
+	@Column(name = "cnj_polo_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	

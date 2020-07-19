@@ -40,7 +40,7 @@ public class Assinatura implements Serializable {
 
 	
 	@Id
-	@Column(name = "id")
+	@Column(name = "cnj_assinatura_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
@@ -64,6 +64,70 @@ public class Assinatura implements Serializable {
 
 	@Column(name = "signatatio_login_identficador")
 	private String signatatio_login_identficador;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getFkDocumento() {
+		return fkDocumento;
+	}
+
+	public void setFkDocumento(Integer fkDocumento) {
+		this.fkDocumento = fkDocumento;
+	}
+
+	public String getAssinatura() {
+		return assinatura;
+	}
+
+	public void setAssinatura(String assinatura) {
+		this.assinatura = assinatura;
+	}
+
+	public String getAlgoritmo_hash_assinatura() {
+		return algoritmo_hash_assinatura;
+	}
+
+	public void setAlgoritmo_hash_assinatura(String algoritmo_hash_assinatura) {
+		this.algoritmo_hash_assinatura = algoritmo_hash_assinatura;
+	}
+
+	public String getCadeia_certificado_assinatura() {
+		return cadeia_certificado_assinatura;
+	}
+
+	public void setCadeia_certificado_assinatura(String cadeia_certificado_assinatura) {
+		this.cadeia_certificado_assinatura = cadeia_certificado_assinatura;
+	}
+
+	public String getCodificacao_certificado_assinatura() {
+		return codificacao_certificado_assinatura;
+	}
+
+	public void setCodificacao_certificado_assinatura(String codificacao_certificado_assinatura) {
+		this.codificacao_certificado_assinatura = codificacao_certificado_assinatura;
+	}
+
+	public String getData_assinatura() {
+		return data_assinatura;
+	}
+
+	public void setData_assinatura(String data_assinatura) {
+		this.data_assinatura = data_assinatura;
+	}
+
+	public String getSignatatio_login_identficador() {
+		return signatatio_login_identficador;
+	}
+
+	public void setSignatatio_login_identficador(String signatatio_login_identficador) {
+		this.signatatio_login_identficador = signatatio_login_identficador;
+	}
 
 }
 

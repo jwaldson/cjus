@@ -28,9 +28,9 @@ public class DadoBasico implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public DadoBasico(Integer id, Integer fkManifestacaoProcessual, BigInteger classeProcessual,
-			BigInteger codigoLocalidade, BigInteger competencia, String modalidadeVinculacaoProcesso,
-			BigInteger valorCausa, BigInteger nivelSigilo, String dataAjuizamento, String outroParametro) {
+	public DadoBasico(Integer id, Integer fkManifestacaoProcessual, Integer classeProcessual,
+			String codigoLocalidade, Integer competencia, String modalidadeVinculacaoProcesso,
+			Double valorCausa, Integer nivelSigilo, String dataAjuizamento, String outroParametro) {
 		super();
 		this.id = id;
 		this.fkManifestacaoProcessual = fkManifestacaoProcessual;
@@ -55,7 +55,7 @@ public class DadoBasico implements Serializable {
 
 
 	@Id
-	@Column(name = "id")
+	@Column(name = "cnj_dados_basicos_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 
@@ -63,22 +63,22 @@ public class DadoBasico implements Serializable {
 	private Integer fkManifestacaoProcessual;
 	
 	@Column(name = "classe_processual")
-	private BigInteger classeProcessual;
+	private Integer classeProcessual;
 	
 	@Column(name = "codigo_localidade")
-	private BigInteger codigoLocalidade;
+	private String codigoLocalidade;
 	
 	@Column(name = "competencia")
-	private BigInteger competencia;
+	private Integer competencia;
 
 	@Column(name = "modalidade_vinculacao_processo")
 	private String modalidadeVinculacaoProcesso;
 
 	@Column(name = "valor_causa")
-	private BigInteger valorCausa;
+	private Double valorCausa;
 
 	@Column(name = "nivel_sigilo")
-	private BigInteger nivelSigilo;
+	private Integer nivelSigilo;
 
 	@Column(name = "data_ajuizamento")
 	private String dataAjuizamento;
@@ -114,27 +114,27 @@ public class DadoBasico implements Serializable {
 		this.fkManifestacaoProcessual = fkManifestacaoProcessual;
 	}
 
-	public BigInteger getClasseProcessual() {
+	public Integer getClasseProcessual() {
 		return classeProcessual;
 	}
 
-	public void setClasseProcessual(BigInteger classeProcessual) {
+	public void setClasseProcessual(Integer classeProcessual) {
 		this.classeProcessual = classeProcessual;
 	}
 
-	public BigInteger getCodigoLocalidade() {
+	public String getCodigoLocalidade() {
 		return codigoLocalidade;
 	}
 
-	public void setCodigoLocalidade(BigInteger codigoLocalidade) {
+	public void setCodigoLocalidade(String codigoLocalidade) {
 		this.codigoLocalidade = codigoLocalidade;
 	}
 
-	public BigInteger getCompetencia() {
+	public Integer getCompetencia() {
 		return competencia;
 	}
 
-	public void setCompetencia(BigInteger competencia) {
+	public void setCompetencia(Integer competencia) {
 		this.competencia = competencia;
 	}
 
@@ -146,19 +146,19 @@ public class DadoBasico implements Serializable {
 		this.modalidadeVinculacaoProcesso = modalidadeVinculacaoProcesso;
 	}
 
-	public BigInteger getValorCausa() {
+	public Double getValorCausa() {
 		return valorCausa;
 	}
 
-	public void setValorCausa(BigInteger valorCausa) {
+	public void setValorCausa(Double valorCausa) {
 		this.valorCausa = valorCausa;
 	}
 
-	public BigInteger getNivelSigilo() {
+	public Integer getNivelSigilo() {
 		return nivelSigilo;
 	}
 
-	public void setNivelSigilo(BigInteger nivelSigilo) {
+	public void setNivelSigilo(Integer nivelSigilo) {
 		this.nivelSigilo = nivelSigilo;
 	}
 

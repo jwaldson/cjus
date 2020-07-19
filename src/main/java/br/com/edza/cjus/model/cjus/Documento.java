@@ -25,7 +25,7 @@ public class Documento implements Serializable {
 
 	public Documento(Integer id, Integer fkManifestacaoProcessual, String idDocumento, String idDocumentoVinculado,
 			String tipoDocumentoConsultapje, String dataHoraDocumento, String descricaoDocumento, String hashDocumento,
-			BigInteger nivelSigiloDocumento, String tipoDocumento, String conteudoDocumento, String mimetypeDocumento) {
+			Integer nivelSigiloDocumento, String tipoDocumento, String conteudoDocumento, String mimetypeDocumento) {
 		super();
 		this.id = id;
 		this.fkManifestacaoProcessual = fkManifestacaoProcessual;
@@ -50,7 +50,7 @@ public class Documento implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "cnj_documento_id")
 	private Integer id;
 
 	@Column(name = "fk_id_mnifestacao_processual")
@@ -75,7 +75,7 @@ public class Documento implements Serializable {
 	private String hashDocumento;
 
 	@Column(name = "nivel_sigilo_documento")
-	private BigInteger nivelSigiloDocumento;
+	private Integer nivelSigiloDocumento;
 
 	@Column(name = "tipo_documento")
 	private String tipoDocumento;
@@ -153,11 +153,11 @@ public class Documento implements Serializable {
 		this.hashDocumento = hashDocumento;
 	}
 
-	public BigInteger getNivelSigiloDocumento() {
+	public Integer getNivelSigiloDocumento() {
 		return nivelSigiloDocumento;
 	}
 
-	public void setNivelSigiloDocumento(BigInteger nivelSigiloDocumento) {
+	public void setNivelSigiloDocumento(Integer nivelSigiloDocumento) {
 		this.nivelSigiloDocumento = nivelSigiloDocumento;
 	}
 

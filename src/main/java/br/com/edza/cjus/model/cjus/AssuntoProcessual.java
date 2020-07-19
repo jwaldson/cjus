@@ -23,8 +23,8 @@ public class AssuntoProcessual implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public AssuntoProcessual(Integer id, Integer fkDadosBasicos, Boolean principal, BigInteger codigoNacional,
-			BigInteger codigoAssunto, BigInteger codigoPaiNacional, String descricao) {
+	public AssuntoProcessual(Integer id, Integer fkDadosBasicos, Boolean principal, Integer codigoNacional,
+			BigInteger codigoAssunto, Integer codigoPaiNacional, String descricao) {
 		super();
 		this.id = id;
 		this.fkDadosBasicos = fkDadosBasicos;
@@ -42,7 +42,7 @@ public class AssuntoProcessual implements Serializable {
 	
 	
 	@Id
-	@Column(name = "id")
+	@Column(name = "cnj_assunto_processual_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)	
 	private Integer id;
 
@@ -53,16 +53,72 @@ public class AssuntoProcessual implements Serializable {
 	private Boolean principal;
 
 	@Column(name = "codigo_nacional")
-	private BigInteger codigoNacional;
+	private Integer codigoNacional;
 
 	@Column(name = "codigo_assunto")
 	private BigInteger codigoAssunto;
 
 	@Column(name = "codigo_pai_acional")
-	private BigInteger codigoPaiNacional;
+	private Integer codigoPaiNacional;
 
 	@Column(name = "descricao")
 	private String descricao;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getFkDadosBasicos() {
+		return fkDadosBasicos;
+	}
+
+	public void setFkDadosBasicos(Integer fkDadosBasicos) {
+		this.fkDadosBasicos = fkDadosBasicos;
+	}
+
+	public Boolean getPrincipal() {
+		return principal;
+	}
+
+	public void setPrincipal(Boolean principal) {
+		this.principal = principal;
+	}
+
+	public Integer getCodigoNacional() {
+		return codigoNacional;
+	}
+
+	public void setCodigoNacional(Integer codigoNacional) {
+		this.codigoNacional = codigoNacional;
+	}
+
+	public BigInteger getCodigoAssunto() {
+		return codigoAssunto;
+	}
+
+	public void setCodigoAssunto(BigInteger codigoAssunto) {
+		this.codigoAssunto = codigoAssunto;
+	}
+
+	public Integer getCodigoPaiNacional() {
+		return codigoPaiNacional;
+	}
+
+	public void setCodigoPaiNacional(Integer codigoPaiNacional) {
+		this.codigoPaiNacional = codigoPaiNacional;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
 	
 }

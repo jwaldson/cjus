@@ -26,7 +26,7 @@ public class Parte implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Parte(Integer id, Integer fkPolo, String assistencia_judiciaria, String intimacaoPendente) {
+	public Parte(Integer id, Integer fkPolo, Boolean assistencia_judiciaria, Integer intimacaoPendente) {
 		super();
 		this.id = id;
 		this.fkPolo = fkPolo;
@@ -41,7 +41,7 @@ public class Parte implements Serializable {
 	
 	
 	@Id
-	@Column(name = "id")
+	@Column(name = "cnj_parte_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 
@@ -49,15 +49,63 @@ public class Parte implements Serializable {
 	private Integer fkPolo;
 
 	@Column(name = "assistencia_judiciaria")
-	private String assistencia_judiciaria;
+	private Boolean assistencia_judiciaria;
 
 	@Column(name = "intimacaoPendente")
-	private String intimacaoPendente;
+	private Integer intimacaoPendente;
 
-	@OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL, mappedBy="fkParte")
-	private List<Pessoa> pessoas;
+	@OneToOne(cascade=CascadeType.ALL)
+	private Pessoa pessoa;
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL, mappedBy="fkParte")
 	private List<Advogado> advogados;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getFkPolo() {
+		return fkPolo;
+	}
+
+	public void setFkPolo(Integer fkPolo) {
+		this.fkPolo = fkPolo;
+	}
+
+	public Boolean getAssistencia_judiciaria() {
+		return assistencia_judiciaria;
+	}
+
+	public void setAssistencia_judiciaria(Boolean assistencia_judiciaria) {
+		this.assistencia_judiciaria = assistencia_judiciaria;
+	}
+
+	public Integer getIntimacaoPendente() {
+		return intimacaoPendente;
+	}
+
+	public void setIntimacaoPendente(Integer intimacaoPendente) {
+		this.intimacaoPendente = intimacaoPendente;
+	}
+
+	public Pessoa getPessoa() {
+		return pessoa;
+	}
+
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
+	}
+
+	public List<Advogado> getAdvogados() {
+		return advogados;
+	}
+
+	public void setAdvogados(List<Advogado> advogados) {
+		this.advogados = advogados;
+	}
 
 }

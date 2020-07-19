@@ -40,7 +40,7 @@ public class DocumentoIdentificacao implements Serializable {
 	}
 
 	@Id
-	@Column(name = "id")
+	@Column(name = "cnj_documento_identificacaoid")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	

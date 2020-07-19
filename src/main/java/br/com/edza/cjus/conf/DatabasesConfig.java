@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Primary;
 public class DatabasesConfig {
 
 	@Primary
-    @Bean(name="boletos")
+    @Bean(name="cjus")
     @ConfigurationProperties(prefix="spring.datasource")
     public DataSource gatwaypagtoDataSource() {
       DataSource build = DataSourceBuilder.create().build();

@@ -76,7 +76,7 @@ CREATE TABLE "public"."tjba_documento_identificacao"
 CREATE TABLE "public"."tjba_endereco"
 (
    tjba_endereco_id bigint PRIMARY KEY NOT NULL,
-   cep int,
+   cep varchar(10),
    logradouro varchar(200),
    numero varchar(200),
    complemento varchar(200),
@@ -92,7 +92,7 @@ CREATE TABLE "public"."tjba_manifestacao_processual"
 (
    tjba_manifestacao_processual_id bigint PRIMARY KEY NOT NULL,
    entra_status_processamento varchar(2),
-   id_manifestante int,
+   id_manifestante varchar(20),
    senha_manifestante varchar(200),
    retorno_sucesso bool,
    retorno_mensagem varchar(200),
@@ -115,7 +115,7 @@ CREATE TABLE "public"."tjba_parte"
 (
    tjba_parte_id bigint PRIMARY KEY NOT NULL,
    assistencia_judiciaria bool,
-   intimacaopendente varchar(200),
+   intimacaopendente bigint,
    relacionamentoprocessual varchar(200),
    fk_id_polo bigint
 )
@@ -256,11 +256,7 @@ CREATE UNIQUE INDEX pk_tjba_parte ON "public"."tjba_parte"(tjba_parte_id)
 ;
 CREATE INDEX fki_fk_polo_dados_basicos ON "public"."tjba_parte"(fk_id_polo)
 ;
-ALTER TABLE "public"."tjba_pessoa"
-ADD CONSTRAINT fk_pessoa_parte
-FOREIGN KEY (fk_id_parte)
-REFERENCES "public"."tjba_parte"(tjba_parte_id)
-;
+
 ALTER TABLE "public"."tjba_pessoa"
 ADD CONSTRAINT fk_pessoa_advogado
 FOREIGN KEY (fk_id_advogado)
@@ -268,8 +264,7 @@ REFERENCES "public"."tjba_advogado"(tjba_advogado_id)
 ;
 CREATE INDEX fki_fk_pessoa_advogado ON "public"."tjba_pessoa"(fk_id_advogado)
 ;
-CREATE INDEX fki_fk_pessoa_parte ON "public"."tjba_pessoa"(fk_id_parte)
-;
+
 CREATE UNIQUE INDEX pk_tjba_pessoa ON "public"."tjba_pessoa"(tjba_pessoa_id)
 ;
 ALTER TABLE "public"."tjba_polo"

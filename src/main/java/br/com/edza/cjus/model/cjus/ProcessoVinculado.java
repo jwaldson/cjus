@@ -37,7 +37,7 @@ public class ProcessoVinculado implements Serializable {
 
 	
 	@Id
-	@Column(name = "id")
+	@Column(name = "cnj_processo_vinculado_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)	
 	private Integer id;
 
@@ -53,6 +53,38 @@ public class ProcessoVinculado implements Serializable {
 //	@ManyToOne
 //	@JoinColumn(name="id", nullable=false)
 //	private DadoBasico processoVinculado;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getFkDadosBasicos() {
+		return fkDadosBasicos;
+	}
+
+	public void setFkDadosBasicos(Integer fkDadosBasicos) {
+		this.fkDadosBasicos = fkDadosBasicos;
+	}
+
+	public String getNumeroProcesso() {
+		return numeroProcesso;
+	}
+
+	public void setNumeroProcesso(String numeroProcesso) {
+		this.numeroProcesso = numeroProcesso;
+	}
+
+	public String getVinculo() {
+		return vinculo;
+	}
+
+	public void setVinculo(String vinculo) {
+		this.vinculo = vinculo;
+	}
 	
 }
 

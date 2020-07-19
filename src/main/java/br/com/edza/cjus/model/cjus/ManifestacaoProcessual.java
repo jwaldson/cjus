@@ -25,7 +25,7 @@ public class ManifestacaoProcessual implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ManifestacaoProcessual(Integer id, String entraStatusProcessamento, BigInteger idManifestante,
+	public ManifestacaoProcessual(Integer id, String entraStatusProcessamento, String idManifestante,
 			String senhaManifestante, Boolean retornoSucesso, String retornoMensagem,
 			BigInteger retornoProtocoloRecebimento, String retornoDataOperacao, String retornoRecibo,
 			String saiConteudoRetornado, String saiDataAtualizacaoRegistro, String saiErroSistema) {
@@ -46,14 +46,14 @@ public class ManifestacaoProcessual implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "cnj_manifestacao_processual_id")
 	private Integer id;
 
 	@Column(name = "entra_status_processamento")
 	private String entraStatusProcessamento;
 
 	@Column(name = "id_manifestante")
-	private BigInteger idManifestante;
+	private String idManifestante;
 
 	@Column(name = "senha_manifestante")
 	private String senhaManifestante;
@@ -104,11 +104,11 @@ public class ManifestacaoProcessual implements Serializable {
 		this.entraStatusProcessamento = entraStatusProcessamento;
 	}
 
-	public BigInteger getIdManifestante() {
+	public String getIdManifestante() {
 		return idManifestante;
 	}
 
-	public void setIdManifestante(BigInteger idManifestante) {
+	public void setIdManifestante(String idManifestante) {
 		this.idManifestante = idManifestante;
 	}
 

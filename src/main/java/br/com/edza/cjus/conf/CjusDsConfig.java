@@ -13,30 +13,28 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import static java.util.Collections.singletonMap;
-
 @Configuration
 @EnableJpaRepositories(
-        entityManagerFactoryRef = "gatewaypagtoEntityManagerFactory",
-        transactionManagerRef = "gatewaypagtoTransactionManager",
+        entityManagerFactoryRef = "cjusEntityManagerFactory",
+        transactionManagerRef = "cjusTransactionManager",
         basePackages = "br.com.edza.cjus.repository"
 )
 @EnableTransactionManagement
-public class GatewayPagtoDsConfig {
+public class CjusDsConfig {
 
 	  @Primary
-	    @Bean(name = "gatewaypagtoEntityManagerFactory")
+	    @Bean(name = "cjusEntityManagerFactory")
 	    public LocalContainerEntityManagerFactoryBean gatewaypagtoEntityManagerFactory(final EntityManagerFactoryBuilder builder,
-	                                                                            final @Qualifier("boletos") DataSource dataSource) {
+	                                                                            final @Qualifier("cjus") DataSource dataSource) {
 	        return builder
 	                .dataSource(dataSource)
 	                .packages("br.com.edza.cjus.model")
-	                .persistenceUnit("boletos")
+	                .persistenceUnit("cjus")
 	                .build();
 	    }
 
-    @Bean(name = "gatewaypagtoTransactionManager")
-    public PlatformTransactionManager gatewaypagtoTransactionManager(@Qualifier("gatewaypagtoEntityManagerFactory") EntityManagerFactory gatewaypagtoEntityManagerFactory) {
-        return new JpaTransactionManager(gatewaypagtoEntityManagerFactory);
+    @Bean(name = "cjusTransactionManager")
+    public PlatformTransactionManager cjusTransactionManager(@Qualifier("cjusEntityManagerFactory") EntityManagerFactory cjusEntityManagerFactory) {
+        return new JpaTransactionManager(cjusEntityManagerFactory);
     }
 }

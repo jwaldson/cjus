@@ -26,12 +26,11 @@ public class Pessoa implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Pessoa(Integer id, Integer fkParte, Integer fkAdvogado, String nome, String sexo, String nomeGenitor,
-			String nomeGenitora, String dataNascimento, String dataObito, BigInteger numeroDocumentoPrincipal,
+	public Pessoa(Integer id, Integer fkAdvogado, String nome, String sexo, String nomeGenitor,
+			String nomeGenitora, String dataNascimento, String dataObito, String numeroDocumentoPrincipal,
 			String tipoPessoa, String cidadeNatural, String estadoNatural, String nacionalidade) {
 		super();
 		this.id = id;
-		this.fkParte = fkParte;
 		this.fkAdvogado = fkAdvogado;
 		this.nome = nome;
 		this.sexo = sexo;
@@ -46,18 +45,10 @@ public class Pessoa implements Serializable {
 		this.nacionalidade = nacionalidade;
 	}
 
-	public Pessoa(Integer fkParte) {
-		super();
-		this.fkParte = fkParte;
-	}
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "cnj_pessoa_id")
 	private Integer id;
-
-	@Column(name = "fk_id_parte")
-	private Integer fkParte;
 
 	@Column(name = "fk_id_advogado")
 	private Integer fkAdvogado;
@@ -81,7 +72,7 @@ public class Pessoa implements Serializable {
 	private String dataObito;
 
 	@Column(name = "numero_documento_principal")
-	private BigInteger numeroDocumentoPrincipal;
+	private String numeroDocumentoPrincipal;
 
 	@Column(name = "tipo_pessoa")
 	private String tipoPessoa;
@@ -111,14 +102,6 @@ public class Pessoa implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Integer getFkParte() {
-		return fkParte;
-	}
-
-	public void setFkParte(Integer fkParte) {
-		this.fkParte = fkParte;
 	}
 
 	public Integer getFkAdvogado() {
@@ -177,11 +160,11 @@ public class Pessoa implements Serializable {
 		this.dataObito = dataObito;
 	}
 
-	public BigInteger getNumeroDocumentoPrincipal() {
+	public String getNumeroDocumentoPrincipal() {
 		return numeroDocumentoPrincipal;
 	}
 
-	public void setNumeroDocumentoPrincipal(BigInteger numeroDocumentoPrincipal) {
+	public void setNumeroDocumentoPrincipal(String numeroDocumentoPrincipal) {
 		this.numeroDocumentoPrincipal = numeroDocumentoPrincipal;
 	}
 

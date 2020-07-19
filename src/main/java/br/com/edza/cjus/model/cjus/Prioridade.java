@@ -38,7 +38,7 @@ public class Prioridade implements Serializable {
 	
 	
 	@Id
-	@Column(name = "id")
+	@Column(name = "cnj_prioridade_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	

@@ -21,7 +21,7 @@ public class Endereco implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}	
-	public Endereco(Integer id, Integer fkPessoa, Integer fkAdvogado, BigInteger cep, String logradouro, String numero,
+	public Endereco(Integer id, Integer fkPessoa, Integer fkAdvogado, String cep, String logradouro, String numero,
 			String complemento, String bairro, String cidade, String estado, String pais) {
 		super();
 		this.id = id;
@@ -44,7 +44,7 @@ public class Endereco implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "cnj_endereco_id")
 	private Integer id;
 
 	@Column(name = "fk_id_pessoa")
@@ -55,7 +55,7 @@ public class Endereco implements Serializable {
 
 	
 	@Column(name = "cep")
-	private BigInteger Cep;
+	private String Cep;
 
 	@Column(name = "logradouro")
 	private String logradouro;
@@ -102,11 +102,11 @@ public class Endereco implements Serializable {
 		this.fkAdvogado = fkAdvogado;
 	}
 
-	public BigInteger getCep() {
+	public String getCep() {
 		return Cep;
 	}
 
-	public void setCep(BigInteger cep) {
+	public void setCep(String cep) {
 		Cep = cep;
 	}
 
